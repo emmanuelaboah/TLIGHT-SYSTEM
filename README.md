@@ -1,2 +1,2 @@
 # TLIGHT-SYSTEM
-TLIGHT System Paper
+TLIGHT System Paper (JCP)
