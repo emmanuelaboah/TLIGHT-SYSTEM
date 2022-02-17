@@ -1,0 +1,10 @@
+## Algorithms
+
+
+### OCSVM
+
+
+### OCNN
+
+
+### IF
