@@ -157,7 +157,7 @@ def tf_OneClass_NN_Relu(data_train, data_test):
 # Load preprocessed Dataset
 path = ../Dataset/train_data/
 train_df = pd.read_csv(path + "train_data.csv", index_col=0)  # train data
-test_df = pd.read_csv(path + "test_data_X.csv")  # modify as required - there are 5 different test sets in the dataset directory
+test_df = pd.read_csv(path + "test_data_X.csv")  # modify (X) as required - there are 5 different test sets in the dataset directory
 
 # Normalize data
 scaler = MinMaxScaler()
