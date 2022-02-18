@@ -28,8 +28,6 @@ def save_plot(fig, path="plots", tight_layout=True, fig_extension="png", resolut
 
 # Script for saving the output
 decision_scorePath = "./"
-
-
 def write_decisionScores2Csv(path, filename, positiveScores, negativeScores):
     newfilePath = path + filename
     print("Writing file to ", path + filename)
