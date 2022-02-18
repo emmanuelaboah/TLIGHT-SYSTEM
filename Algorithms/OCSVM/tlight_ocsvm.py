@@ -9,6 +9,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.pipeline import Pipeline
 from sklearn import svm
 
+from ..Utils import utils
+
 
 # Load preprocessed Dataset
 path = ../Dataset/train_data/
