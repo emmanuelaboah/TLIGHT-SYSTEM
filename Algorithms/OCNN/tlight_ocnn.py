@@ -16,9 +16,9 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.pipeline import Pipeline
 
-df_usps_scores = {}
-decision_scorePath = "../Dataset/"
 
+df_ocnn_scores = {}
+decision_scorePath = "../Dataset/"
 
 def write_decisionScores2Csv(path, filename, positiveScores, negativeScores):
     newfilePath = path + filename
@@ -152,3 +152,23 @@ def tf_OneClass_NN_Relu(data_train, data_test):
 
     return [pos_decisionScore, neg_decisionScore]
 
+
+# =========== Main ==================
+# Load preprocessed Dataset
+path = ../Dataset/train_data/
+train_df = pd.read_csv(path + "train_data.csv", index_col=0)  # train data
+test_df = pd.read_csv(path + "test_data_X.csv")  # modify as required - there are 5 different test sets in the dataset directory
+
+# Normalize data
+scaler = MinMaxScaler()
+trans_pipeline = Pipeline([("scaler", MinMaxScaler())])
+
+#train_data = scaler.fit_transform(train)
+train_data = trans_pipeline.fit_transform(train_df)
+test_data = trans_pipeline.transform(test_df.iloc[:,:-1])
+
+ocnn_anomaly_scores = tf_OneClass_NN_Relu(train_data, test_data)
+df_ocnn_scores["OCNN_Train"] = ocnn_anomaly_scores[0]
+df_ocnn_scores["OCNN_Test"] = ocnn_anomaly_scores[1]
+
+print("Finished!!")
