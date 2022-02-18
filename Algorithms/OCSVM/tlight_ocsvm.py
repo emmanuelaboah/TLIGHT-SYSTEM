@@ -59,6 +59,16 @@ def ocSVM(train_, test_, nu=0.1, kernel='poly',
     return train_pred, test_pred, test_decision_scores
 
 
+def evaluate(pred_df, ground_truth):
+
+    print("====confusion matrix======")
+    print(confusion_matrix(ground_truth, pred_df))
+
+    print("====classification report====")
+    print(classification_report(ground_truth, pred_df))
+
+
+
 
 
 
