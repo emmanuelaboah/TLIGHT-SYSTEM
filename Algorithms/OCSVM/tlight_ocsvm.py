@@ -49,7 +49,7 @@ def ocSVM(train_, test_, nu=0.1, kernel='poly',
     end_test = time.time() - start_test
 
     print("\nTest time is {:.2f}s".format(end_test))
-    pd.DataFrame(test_pred)
+    test_pred = pd.DataFrame(test_pred)
 
     # Decision scores
     test_decision_scores = ocsvm.decision_function(test_data)
