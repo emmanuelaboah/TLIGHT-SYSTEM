@@ -2,7 +2,7 @@
 This directory contains OCSVM, OCNN, and IF algorithms described in our <i class="icon-cog"></i> **[work](https://)**. 
 
 ### OCSVM
-This is a subdirectory that contains ```tlight_ocsvm.py``` script.
+This subdirectory contains ```tlight_ocsvm.py``` script.
 The script is responsible for training and evaluating the OCSVM model on 
 the train and test datasets. Hyper-parameters specified in the alg are the
 same as the optimal hyper-parameters specified in our work.
