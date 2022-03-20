@@ -3,6 +3,7 @@
 import os
 import time
 import random
+import csv
 
 import numpy as np
 import pandas as pd
@@ -10,7 +11,6 @@ from sklearn import utils
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 import tensorflow as tf
-import csv
 from itertools import zip_longest
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.decomposition import PCA
@@ -33,6 +33,7 @@ def write_decisionScores2Csv(path, filename, positiveScores, negativeScores):
         wr.writerow(("Training", "Testing"))
         wr.writerows(export_data)
     myfile.close()
+    
     return
 
 
@@ -136,6 +137,7 @@ def tf_OneClass_NN_Relu(data_train, data_test):
 
     train = nnScore(train_X, w_1, w_2, g)
     test = nnScore(test_X, w_1, w_2, g)
+    
     with sess.as_default():
         arrayTrain = train.eval()
         arrayTest = test.eval()
