@@ -36,7 +36,6 @@ def write_decisionScores2Csv(path, filename, positiveScores, negativeScores):
     
     return
 
-
 def tf_OneClass_NN_Relu(data_train, data_test):
     tf.reset_default_graph()
 
